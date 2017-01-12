@@ -1,11 +1,14 @@
+.upload {
+    width: 157px !important;
+    height: 57px !important;
+    background: url(upload.png) !important;
+    overflow: hidden;
+}
 
-.custom-file-upload {
-    display: block;
-    width: auto;
-    font-size: 16px;
-    margin-top: 30px;
-    //border: 1px solid #ccc;
-    label {
-        display: block;
-        margin-bottom: 5px;
-    }
+.upload input {
+    display: block !important;
+    width: 157px !important;
+    height: 57px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+}

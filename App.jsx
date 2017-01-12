@@ -4,7 +4,7 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
-import Editor from './editor.jsx';
+import CodeMirror from './CodeMirror.jsx';
 import FileUpload from './fileUpload.jsx';
 class App extends React.Component {
        constructor(props) {
@@ -31,8 +31,8 @@ onFileLoad(e){console.log(e.target.result);
 		return (
         <div>
         	<AppBar title="CI" iconClassNameRight="muidocs-icon-navigation-expand-more"/>
-          <FileUpload/>
-          <Editor/>
+        
+          <CodeMirror/>
           <RaisedButton label="Save" secondary={true}  onClick={this.handleClick} style={{marginLeft:"1%"}}/>
          </div>
       );

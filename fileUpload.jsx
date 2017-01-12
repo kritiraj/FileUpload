@@ -16,10 +16,12 @@ class FileUpload extends React.Component
     var temp = document.getElementById('filedata').files[0];
     var reader = new FileReader();
     reader.onload = function(e) {
-    console.log(reader.result);
+    this.setState({
+       editorState: reader.result
+     });
+   }
 
-                }
-                reader.readAsText(temp);
+   reader.readAsText(temp);
 
     }
 
