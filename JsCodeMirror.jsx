@@ -1,36 +1,31 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Codemirror = require('react-codemirror');
-require('codemirror/mode/yaml/yaml');
+var JsCodemirror = require('react-codemirror');
 require('codemirror/mode/javascript/javascript');
-
-import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 
-
-
-
-class CodeMirror extends React.Component
+class JsCodeMirror extends React.Component
 {
 constructor(props)
 {
 		super(props);
 
 		this.handleChange = this.handleChange.bind(this);
-		this.state={code:"//write code here",mode:"yaml"};
+		this.state={code:"//write js code here",mode:"javascript"};
 
 }
 
 	handleChange()
 	{
 	  var that = this;
-		var temp = document.getElementById('filedata').files[0];
+		var temp = document.getElementById('jsfiledata').files[0];
 		var ext = temp.name.split('.').pop().toLowerCase();
-		if(ext!="yml")
+		if(ext!="js")
 		{
-		    alert('Not a yml file');
+		    alert('Not a js file');
 		}
 		else{
+
 			var reader = new FileReader();
 			reader.onload = function(e) {
 			console.log(reader.result);
@@ -53,9 +48,9 @@ constructor(props)
 
 		return (
 			<div>
-				<Codemirror ref="editor" value={this.state.code}  options={options}  />
+				<JsCodemirror ref="editor" value={this.state.code}  options={options}  />
 				<div className="upload">
-				<input type="file" name="upload" onChange={this.handleChange} id='filedata' />
+				<input type="file" name="upload" onChange={this.handleChange} id='jsfiledata' />
 				</div>
 			</div>
 
@@ -63,4 +58,4 @@ constructor(props)
 	}
 }
 
-export default CodeMirror;
+export default JsCodeMirror;
